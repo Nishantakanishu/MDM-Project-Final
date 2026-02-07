@@ -31,9 +31,9 @@ const DashboardHome = () => {
       title: 'Users', 
       subtitle: 'Management',
       icon: MdManageAccounts, 
-      color: 'from-purple-600 to-purple-800',
-      bgColor: 'bg-purple-50',
-      hoverColor: 'hover:bg-purple-100',
+      color: 'from-cyan-500 to-cyan-700',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'users',
       stats: { active: 245, total: 256, change: '+2.3%', trend: 'up' },
       description: 'System administration'
@@ -43,9 +43,9 @@ const DashboardHome = () => {
       title: 'Consumers', 
       subtitle: 'Management',
       icon: MdGroup, 
-      color: 'from-green-600 to-green-800',
-      bgColor: 'bg-green-50',
-      hoverColor: 'hover:bg-green-100',
+      color: 'from-cyan-400 to-cyan-600',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'consumers',
       stats: { active: 1847, total: 1923, change: '+4.1%', trend: 'up' },
       description: 'Consumer data'
@@ -55,9 +55,9 @@ const DashboardHome = () => {
       title: 'Assets', 
       subtitle: 'Management',
       icon: MdDevices, 
-      color: 'from-blue-600 to-blue-800',
-      bgColor: 'bg-blue-50',
-      hoverColor: 'hover:bg-blue-100',
+      color: 'from-cyan-600 to-cyan-800',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'assets',
       stats: { active: 892, total: 945, change: '+1.8%', trend: 'up' },
       description: 'Infrastructure'
@@ -67,19 +67,19 @@ const DashboardHome = () => {
       title: 'Demand', 
       subtitle: 'Service',
       icon: MdTrendingUp, 
-      color: 'from-orange-600 to-orange-800',
-      bgColor: 'bg-orange-50',
-      hoverColor: 'hover:bg-orange-100',
+      color: 'from-teal-500 to-cyan-700',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'demand',
       stats: { active: 156, total: 178, change: '+6.2%', trend: 'up' },
       description: 'Forecasting'
     },
     { 
       id: 'mdm', 
-      title: 'Meter Data', 
+      title: 'Meter Data',
       subtitle: 'Management',
       icon: MdElectricMeter, 
-      color: 'from-cyan-600 to-cyan-800',
+      color: 'from-cyan-500 to-teal-700',
       bgColor: 'bg-cyan-50',
       hoverColor: 'hover:bg-cyan-100',
       path: 'mdm',
@@ -91,9 +91,9 @@ const DashboardHome = () => {
       title: 'VEE', 
       subtitle: 'Management',
       icon: MdAnalytics, 
-      color: 'from-indigo-600 to-indigo-800',
-      bgColor: 'bg-indigo-50',
-      hoverColor: 'hover:bg-indigo-100',
+      color: 'from-sky-500 to-cyan-700',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'vee',
       stats: { active: 89, total: 92, change: '+1.2%', trend: 'up' },
       description: 'Validation'
@@ -103,9 +103,9 @@ const DashboardHome = () => {
       title: 'Communication', 
       subtitle: 'Management',
       icon: MdRouter, 
-      color: 'from-pink-600 to-pink-800',
-      bgColor: 'bg-pink-50',
-      hoverColor: 'hover:bg-pink-100',
+      color: 'from-cyan-400 to-teal-600',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'communication',
       stats: { active: 234, total: 245, change: '+2.9%', trend: 'up' },
       description: 'Network'
@@ -115,9 +115,9 @@ const DashboardHome = () => {
       title: 'Energy', 
       subtitle: 'Audit',
       icon: MdAssessment, 
-      color: 'from-teal-600 to-teal-800',
-      bgColor: 'bg-teal-50',
-      hoverColor: 'hover:bg-teal-100',
+      color: 'from-teal-600 to-cyan-800',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'audit',
       stats: { active: 67, total: 78, change: '+5.4%', trend: 'up' },
       description: 'Consumption'
@@ -127,9 +127,9 @@ const DashboardHome = () => {
       title: 'Revenue', 
       subtitle: 'Management',
       icon: MdAttachMoney, 
-      color: 'from-emerald-600 to-emerald-800',
-      bgColor: 'bg-emerald-50',
-      hoverColor: 'hover:bg-emerald-100',
+      color: 'from-emerald-500 to-cyan-700',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'revenue',
       stats: { active: 456, total: 478, change: '+8.1%', trend: 'up' },
       description: 'Financial'
@@ -139,7 +139,7 @@ const DashboardHome = () => {
       title: 'Exception', 
       subtitle: 'Management',
       icon: MdReportProblem, 
-      color: 'from-red-600 to-red-800',
+      color: 'from-red-500 to-red-700',
       bgColor: 'bg-red-50',
       hoverColor: 'hover:bg-red-100',
       path: 'exceptions',
@@ -151,9 +151,9 @@ const DashboardHome = () => {
       title: 'Customer', 
       subtitle: 'Service',
       icon: MdSupportAgent, 
-      color: 'from-violet-600 to-violet-800',
-      bgColor: 'bg-violet-50',
-      hoverColor: 'hover:bg-violet-100',
+      color: 'from-cyan-600 to-sky-800',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'csm',
       stats: { active: 189, total: 201, change: '+3.2%', trend: 'up' },
       description: 'Support'
@@ -163,9 +163,9 @@ const DashboardHome = () => {
       title: 'Prepaid', 
       subtitle: 'Services',
       icon: MdElectricalServices, 
-      color: 'from-amber-600 to-amber-800',
-      bgColor: 'bg-amber-50',
-      hoverColor: 'hover:bg-amber-100',
+      color: 'from-teal-400 to-cyan-600',
+      bgColor: 'bg-cyan-50',
+      hoverColor: 'hover:bg-cyan-100',
       path: 'prepaid',
       stats: { active: 567, total: 589, change: '+7.6%', trend: 'up' },
       description: 'Payment'
@@ -180,19 +180,19 @@ const DashboardHome = () => {
   const secondRow = moduleCards.slice(6, 12);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-pink-50 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-white via-cyan-50/30 to-white p-6">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" />
-        <div className="absolute top-40 right-20 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000" />
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000" />
+        <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" />
+        <div className="absolute top-40 right-20 w-72 h-72 bg-teal-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000" />
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-sky-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000" />
       </div>
 
       {/* Header */}
       <div className="relative z-10 mb-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div className="transform transition-all duration-500 hover:scale-105">
-            <h1 className="text-5xl font-black bg-gradient-to-r from-purple-800 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
+            <h1 className="text-5xl font-black bg-gradient-to-r from-cyan-600 via-cyan-500 to-teal-600 bg-clip-text text-transparent animate-gradient">
               MDM Control Center
             </h1>
             <p className="text-gray-600 mt-2 text-lg font-medium">
@@ -201,16 +201,16 @@ const DashboardHome = () => {
           </div>
           
           <div className="flex items-center gap-4">
-            <div className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg border border-white/50 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <p className="text-sm text-gray-500 font-medium">System Status</p>
+            <div className="glass-cyan px-6 py-3 rounded-2xl shadow-lg border border-cyan-200/50 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <p className="text-sm text-cyan-600 font-medium">System Status</p>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50" />
+                <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse shadow-lg shadow-cyan-500/50" />
                 <span className="text-sm font-bold text-gray-900">Operational</span>
               </div>
             </div>
             
-            <div className="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg border border-white/50 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <p className="text-sm text-gray-500 font-medium">Last Updated</p>
+            <div className="glass-cyan px-6 py-3 rounded-2xl shadow-lg border border-cyan-200/50 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <p className="text-sm text-cyan-600 font-medium">Last Updated</p>
               <p className="text-sm font-bold text-gray-900">
                 {new Date().toLocaleTimeString()}
               </p>
@@ -222,9 +222,9 @@ const DashboardHome = () => {
       {/* First Row - 6 Cards */}
       <div className="relative z-10 mb-8">
         <div className="flex items-center gap-3 mb-6">
-          <div className="h-8 w-1 bg-gradient-to-b from-purple-600 to-purple-800 rounded-full shadow-lg" />
+          <div className="h-8 w-1 bg-gradient-to-b from-cyan-500 to-cyan-700 rounded-full shadow-lg" />
           <h2 className="text-2xl font-bold text-gray-800">Core Operations</h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-purple-200 to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-cyan-200 to-transparent" />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {firstRow.map((module, index) => {
@@ -256,7 +256,7 @@ const DashboardHome = () => {
                 <div className={`
                   relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden
                   hover:shadow-2xl transition-all duration-300
-                  ${isHovered ? 'border-purple-300' : ''}
+                  ${isHovered ? 'border-cyan-300' : ''}
                 `}>
                   {/* Gradient Header */}
                   <div className={`h-1 bg-gradient-to-r ${module.color} transform transition-all duration-300 ${isHovered ? 'h-2' : ''}`} />
@@ -273,7 +273,7 @@ const DashboardHome = () => {
                     
                     {/* Title */}
                     <div className="mb-2">
-                      <h3 className="text-sm font-bold text-gray-900 group-hover:text-purple-800 transition-colors">
+                      <h3 className="text-sm font-bold text-gray-900 group-hover:text-cyan-700 transition-colors">
                         {module.title}
                       </h3>
                       <p className="text-xs text-gray-500">{module.subtitle}</p>
@@ -322,9 +322,9 @@ const DashboardHome = () => {
       {/* Second Row - 6 Cards */}
       <div className="relative z-10 mb-8">
         <div className="flex items-center gap-3 mb-6">
-          <div className="h-8 w-1 bg-gradient-to-b from-green-600 to-green-800 rounded-full shadow-lg" />
+          <div className="h-8 w-1 bg-gradient-to-b from-teal-500 to-cyan-700 rounded-full shadow-lg" />
           <h2 className="text-2xl font-bold text-gray-800">Support Services</h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-green-200 to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-teal-200 to-transparent" />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {secondRow.map((module, index) => {
@@ -356,7 +356,7 @@ const DashboardHome = () => {
                 <div className={`
                   relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden
                   hover:shadow-2xl transition-all duration-300
-                  ${isHovered ? 'border-green-300' : ''}
+                  ${isHovered ? 'border-cyan-300' : ''}
                 `}>
                   {/* Gradient Header */}
                   <div className={`h-1 bg-gradient-to-r ${module.color} transform transition-all duration-300 ${isHovered ? 'h-2' : ''}`} />
@@ -373,7 +373,7 @@ const DashboardHome = () => {
                     
                     {/* Title */}
                     <div className="mb-2">
-                      <h3 className="text-sm font-bold text-gray-900 group-hover:text-green-800 transition-colors">
+                      <h3 className="text-sm font-bold text-gray-900 group-hover:text-cyan-700 transition-colors">
                         {module.title}
                       </h3>
                       <p className="text-xs text-gray-500">{module.subtitle}</p>
@@ -421,28 +421,28 @@ const DashboardHome = () => {
 
       {/* Quick Stats Bar */}
       <div className="relative z-10">
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-6 transform transition-all duration-500 hover:scale-[1.01]">
+        <div className="glass-cyan rounded-2xl shadow-xl border border-cyan-200/50 p-6 transform transition-all duration-500 hover:scale-[1.01]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl shadow-lg mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl shadow-lg mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <p className="text-2xl font-bold text-white">12</p>
               </div>
               <p className="text-sm font-semibold text-gray-800">Active Modules</p>
             </div>
             <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl shadow-lg mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-teal-400 to-cyan-600 rounded-2xl shadow-lg mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <p className="text-2xl font-bold text-white">8.2K</p>
               </div>
               <p className="text-sm font-semibold text-gray-800">Total Assets</p>
             </div>
             <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl shadow-lg mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sky-400 to-cyan-600 rounded-2xl shadow-lg mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <p className="text-2xl font-bold text-white">99.8%</p>
               </div>
               <p className="text-sm font-semibold text-gray-800">System Uptime</p>
             </div>
             <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl shadow-lg mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-700 rounded-2xl shadow-lg mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <p className="text-2xl font-bold text-white">24/7</p>
               </div>
               <p className="text-sm font-semibold text-gray-800">Monitoring</p>

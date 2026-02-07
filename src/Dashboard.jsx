@@ -30,10 +30,12 @@ import {
   MdWarning,
   MdNotifications,
   MdFilePresent,
+  MdHistory,
 } from "react-icons/md";
 
 const menuItems = [
   { name: "Dashboard", icon: MdDashboard, path: "" },
+  { name: "Assets", icon: MdDevices, path: "assets" },
   { name: "User Data", icon: MdPerson, path: "Userdata"},
 ];
 
@@ -52,10 +54,17 @@ const submenuData = {
     { name: 'Service History', icon: MdFilePresent, path: 'consumers/history' },
   ],
   assets: [
-    { name: 'Asset Inventory', icon: MdDevices, path: 'assets/inventory' },
-    { name: 'Maintenance', icon: MdSettings, path: 'assets/maintenance' },
-    { name: 'Asset Health', icon: MdCheckCircle, path: 'assets/health' },
-    { name: 'Depreciation', icon: MdTrendingDown, path: 'assets/depreciation' },
+    { name: 'Dashboard', icon: MdDashboard, path: 'assets' },
+    { name: 'Subdivision', icon: MdGroup, path: 'assets/subdivision' },
+    { name: 'Substation', icon: MdElectricalServices, path: 'assets/substation' },
+    { name: 'Feeder', icon: MdRouter, path: 'assets/feeder' },
+    { name: 'DT', icon: MdElectricMeter, path: 'assets/dt' },
+    { name: 'Device', icon: MdDevices, path: 'assets/device' },
+    { name: 'Physical Stock', icon: MdAssessment, path: 'assets/stock' },
+    { name: 'Faulty/Damage', icon: MdWarning, path: 'assets/faulty' },
+    { name: 'Installed Meter', icon: MdCheckCircle, path: 'assets/installed' },
+    { name: 'New Meters', icon: MdNotifications, path: 'assets/new-meters' },
+    { name: 'Old Meters', icon: MdHistory, path: 'assets/old-meters' },
   ],
   demand: [
     { name: 'Demand Forecast', icon: MdTrendingUp, path: 'demand/forecast' },
@@ -155,22 +164,24 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-cyan-50/30">
       {/* ===== Sidebar ===== */}
       <aside
         className={`fixed top-0 left-0 h-screen
   ${collapsed ? "w-20" : "w-72"
-        } bg-white border-r border-green-200 shadow-xl transition-all duration-300 flex flex-col`}
+        } bg-white/95 backdrop-blur-xl border-r border-cyan-100 shadow-2xl transition-all duration-300 flex flex-col`}
       >
         {/* Logo */}
-        <div className="flex items-center justify-between p-5 border-b border-green-100">
+        <div className="flex items-center justify-between p-5 border-b border-cyan-100 bg-gradient-to-r from-white to-cyan-50/50">
           <div
-            className="flex items-center gap-3 cursor-pointer"
+            className="flex items-center gap-3 cursor-pointer group"
             onClick={() => navigate("/portal")} // 🔹 Navigate to DashboardHome
           >
-            <MdDashboard className="text-green-600 text-3xl" />
+            <div className="p-2 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-xl shadow-lg group-hover:shadow-cyan-400/50 transition-all duration-300 group-hover:scale-110">
+              <MdDashboard className="text-white text-2xl" />
+            </div>
             {!collapsed && (
-              <span className="font-bold text-lg text-gray-700">
+              <span className="font-bold text-xl bg-gradient-to-r from-cyan-600 to-cyan-800 bg-clip-text text-transparent">
                 MDM Dashboard
               </span>
             )}
@@ -178,7 +189,7 @@ const Dashboard = () => {
 
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="text-green-600 hover:bg-green-50 p-2 rounded-lg"
+            className="text-cyan-600 hover:bg-cyan-50 p-2 rounded-lg transition-all duration-300 hover:scale-110"
           >
             <MdMenuOpen
               className={`text-2xl transition-transform ${
@@ -189,7 +200,7 @@ const Dashboard = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 mt-4 space-y-1 px-3 overflow-y-auto">
+        <nav className="flex-1 mt-4 space-y-2 px-3 overflow-y-auto">
           {menuItems.map((item, index) => {
             const Icon = item.icon;
             const isActive = location.pathname === `/portal${item.path ? '/' + item.path : ''}`;
@@ -198,16 +209,21 @@ const Dashboard = () => {
               <NavLink
                 key={index}
                 to={item.path}
-                className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all
+                className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 group relative overflow-hidden
                 ${
                   isActive
-                    ? "bg-purple-800 text-white shadow-md"
-                    : "text-gray-600 hover:bg-purple-50 hover:text-purple-800"
+                    ? "bg-gradient-to-r from-cyan-500 to-cyan-600 text-white shadow-lg shadow-cyan-500/30"
+                    : "text-gray-600 hover:bg-cyan-50 hover:text-cyan-700 hover:shadow-md"
                 }`}
               >
-                <Icon className="text-2xl" />
+                {isActive && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                )}
+                <Icon className={`text-2xl relative z-10 transition-transform duration-300 ${
+                  isActive ? "" : "group-hover:scale-110"
+                }`} />
                 {!collapsed && (
-                  <span className="font-medium text-sm">{item.name}</span>
+                  <span className="font-semibold text-sm relative z-10">{item.name}</span>
                 )}
               </NavLink>
             );
@@ -215,11 +231,12 @@ const Dashboard = () => {
           
           {/* Dynamic Submenu Section */}
           {activeModule && !collapsed && (
-            <div className="mt-6">
-              <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            <div className="mt-6 animate-slideInUp">
+              <div className="px-4 py-2 text-xs font-bold text-cyan-600 uppercase tracking-wider flex items-center gap-2">
+                <div className="h-1 w-8 bg-gradient-to-r from-cyan-400 to-cyan-600 rounded-full" />
                 {activeModule.charAt(0).toUpperCase() + activeModule.slice(1)} Module
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1 mt-2">
                 {submenuData[activeModule]?.map((submenu, subIndex) => {
                   const SubIcon = submenu.icon;
                   return (
@@ -227,15 +244,15 @@ const Dashboard = () => {
                       key={subIndex}
                       to={`/portal/${submenu.path}`}
                       className={({ isActive }) =>
-                        `flex items-center gap-3 px-4 py-2 rounded-lg transition-all
+                        `flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 group relative
                         ${
                           isActive
-                            ? "bg-purple-100 text-purple-800 border-l-4 border-purple-800"
-                            : "text-gray-600 hover:bg-purple-50 hover:text-purple-700"
+                            ? "bg-gradient-to-r from-cyan-50 to-cyan-100 text-cyan-700 border-l-4 border-cyan-600 shadow-md"
+                            : "text-gray-600 hover:bg-cyan-50/50 hover:text-cyan-600 hover:border-l-4 hover:border-cyan-300"
                         }`
                       }
                     >
-                      <SubIcon className="text-lg" />
+                      <SubIcon className="text-lg group-hover:scale-110 transition-transform duration-300" />
                       <span className="text-sm font-medium">{submenu.name}</span>
                     </NavLink>
                   );
@@ -246,8 +263,13 @@ const Dashboard = () => {
         </nav>
 
         {/* Footer */}
-        <div className="p-4 text-xs text-center text-gray-400 border-t">
-          {!collapsed && "© 2026 MDM System"}
+        <div className="p-4 text-xs text-center text-cyan-600 font-medium border-t border-cyan-100 bg-gradient-to-r from-white to-cyan-50/30">
+          {!collapsed && (
+            <div className="flex items-center justify-center gap-2">
+              <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse" />
+              <span>© 2026 MDM System</span>
+            </div>
+          )}
         </div>
       </aside>
 
@@ -255,7 +277,7 @@ const Dashboard = () => {
       <main
   className={`transition-all duration-300
   ${collapsed ? "ml-20" : "ml-72"}
-  h-screen overflow-y-auto bg-gray-100`}
+  h-screen overflow-y-auto bg-gradient-to-br from-gray-50 to-cyan-50/30`}
 >
   <div className="px-6 md:px-10 py-6">
     <Outlet />

@@ -6,7 +6,7 @@ import Dashboard from "./Dashboard";
 import DashboardHome from "./assets/Pages/DashboardHome";
 import Users from "./assets/Pages/Users";
 import Consumers from "./assets/Pages/Consumers";
-import Assets from "./assets/Pages/Assets";
+import Assets from "./assets/Pages/AssetsMDM/AssetsHome";
 import DemandService from "./assets/Pages/DemandService";
 import Communication from "./assets/Pages/Communication";
 import CustomerService from "./assets/Pages/CustomerService";
@@ -44,11 +44,18 @@ const App = () => {
         <Route path="consumers/history" element={<Consumers />} />
 
         {/* Assets Management and submenus */}
+        {/* Assets Management and submenus */}
         <Route path="assets" element={<Assets />} />
-        <Route path="assets/inventory" element={<Assets />} />
-        <Route path="assets/maintenance" element={<Assets />} />
-        <Route path="assets/health" element={<Assets />} />
-        <Route path="assets/depreciation" element={<Assets />} />
+        <Route path="assets/subdivision" element={<Assets />} />
+        <Route path="assets/substation" element={<Assets />} />
+        <Route path="assets/feeder" element={<Assets />} />
+        <Route path="assets/dt" element={<Assets />} />
+        <Route path="assets/device" element={<Assets />} />
+        <Route path="assets/stock" element={<Assets />} />
+        <Route path="assets/faulty" element={<Assets />} />
+        <Route path="assets/installed" element={<Assets />} />
+        <Route path="assets/new-meters" element={<Assets />} />
+        <Route path="assets/old-meters" element={<Assets />} />
 
         {/* Demand Service and submenus */}
         <Route path="demand" element={<DemandService />} />
