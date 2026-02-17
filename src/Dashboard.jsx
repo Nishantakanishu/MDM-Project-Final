@@ -31,6 +31,8 @@ import {
   MdNotifications,
   MdFilePresent,
   MdHistory,
+  MdPublic,
+  MdBusiness,
 } from "react-icons/md";
 
 const menuItems = [
@@ -55,6 +57,9 @@ const submenuData = {
   ],
   assets: [
     { name: 'Dashboard', icon: MdDashboard, path: 'assets' },
+    { name: 'Zone', icon: MdPublic, path: 'assets/zone' },
+    { name: 'Circle', icon: MdBusiness, path: 'assets/circle' },
+    { name: 'Division', icon: MdBusiness, path: 'assets/division' },
     { name: 'Subdivision', icon: MdGroup, path: 'assets/subdivision' },
     { name: 'Substation', icon: MdElectricalServices, path: 'assets/substation' },
     { name: 'Feeder', icon: MdRouter, path: 'assets/feeder' },
@@ -168,7 +173,7 @@ const Dashboard = () => {
       {/* ===== Sidebar ===== */}
       <aside
         className={`fixed top-0 left-0 h-screen
-  ${collapsed ? "w-20" : "w-72"
+  ${collapsed ? "w-20" : "w-52"
         } bg-white/95 backdrop-blur-xl border-r border-cyan-100 shadow-2xl transition-all duration-300 flex flex-col`}
       >
         {/* Logo */}
@@ -276,10 +281,10 @@ const Dashboard = () => {
       {/* ===== Main Content ===== */}
       <main
   className={`transition-all duration-300
-  ${collapsed ? "ml-20" : "ml-72"}
+  ${collapsed ? "ml-20" : "ml-52"}
   h-screen overflow-y-auto bg-gradient-to-br from-gray-50 to-cyan-50/30`}
 >
-  <div className="px-6 md:px-10 py-6">
+  <div className="w-full h-full"> 
     <Outlet />
   </div>
 </main>

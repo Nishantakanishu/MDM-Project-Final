@@ -1,6 +1,8 @@
 import React from 'react';
-import { MdSettingsInputComponent, MdWarning, MdCheckCircle, MdSimCard, MdSearch, MdVisibility } from 'react-icons/md';
+import AssetTable from './AssetTable';
+import AssetsMap from './AssetsMap';
 import SummaryCard from './SummaryCard';
+import { MdSettingsInputComponent, MdCheckCircle, MdSimCard, MdWarning } from 'react-icons/md';
 
 const Stock = () => {
     // Mock Data for Stock Summary
@@ -24,7 +26,7 @@ const Stock = () => {
     ];
 
   return (
-    <div className="p-6 bg-gradient-to-br from-white via-cyan-50/20 to-white min-h-screen space-y-8">
+    <div className="p-6 pt-1 bg-gradient-to-br from-white via-cyan-50/20 to-white min-h-screen space-y-8">
         {/* Header */}
         <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">Physical Stock</h1>
@@ -84,46 +86,29 @@ const Stock = () => {
         </div>
 
         {/* Table Section */}
-        <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
-             <div className="p-6 border-b border-cyan-100 flex justify-between items-center gap-4">
-                 <h2 className="text-xl font-bold text-gray-800">Physical Stock</h2>
-                  <div className="flex gap-2">
-                       <button className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg hover:scale-105 transition-all duration-300">Export Data</button>
-                        <div className="relative">
-                            <input type="text" placeholder="Search" className="border border-cyan-200 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-cyan-500" />
-                             <button className="bg-gradient-to-r from-cyan-600 to-cyan-700 text-white px-3 py-2 rounded-r-lg absolute right-0 top-0 bottom-0 hover:from-cyan-700 hover:to-cyan-800 transition-all"><MdSearch /></button>
-                        </div>
-                  </div>
-             </div>
-             
-             <div className="overflow-x-auto">
-                 <table className="w-full text-left">
-                     <thead className="bg-gray-50 text-gray-600 font-semibold border-b border-gray-200">
-                         <tr>
-                             <th className="p-4">Action</th>
-                             <th className="p-4">Meter Type</th>
-                             <th className="p-4">Meter Manufacture</th>
-                             <th className="p-4">Faulty Count</th>
-                             <th className="p-4">Ok Count</th>
-                             <th className="p-4">Total Count</th>
-                         </tr>
-                     </thead>
-                     <tbody className="divide-y divide-gray-100">
-                         {stockData.map((row, idx) => (
-                             <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                                 <td className="p-4">
-                                     <button className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-1 rounded text-sm hover:shadow-lg hover:scale-105 transition-all duration-300">View</button>
-                                 </td>
-                                 <td className="p-4 text-gray-700">{row.type}</td>
-                                 <td className="p-4 text-gray-700">{row.manufacturer}</td>
-                                 <td className="p-4 text-gray-700">{row.faulty}</td>
-                                 <td className="p-4 text-gray-700">{row.ok}</td>
-                                 <td className="p-4 text-gray-700 font-medium">{row.total}</td>
-                             </tr>
-                         ))}
-                     </tbody>
-                 </table>
-             </div>
+        <AssetTable 
+            title="Physical Stock"
+            columns={[
+                { header: 'Action', accessor: 'action' },
+                { header: 'Meter Type', accessor: 'recordType' },
+                { header: 'Meter Manufacture', accessor: 'manufacturer' },
+                { header: 'Faulty Count', accessor: 'faulty' },
+                { header: 'Ok Count', accessor: 'ok' },
+                { header: 'Total Count', accessor: 'total' }
+            ]}
+            data={stockData.map(row => ({
+                ...row,
+                recordType: row.type, // accessor check
+                action: (
+                    <button className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-4 py-1 rounded text-sm hover:shadow-lg hover:scale-105 transition-all duration-300">View</button>
+                )
+            }))}
+            onAdd={() => console.log('Export Data clicked')}
+            addButtonLabel="Export Data"
+        />
+
+        <div className="mt-8">
+            <AssetsMap />
         </div>
     </div>
   );

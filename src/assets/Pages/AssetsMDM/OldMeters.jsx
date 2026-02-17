@@ -1,5 +1,5 @@
-import React from 'react';
 import AssetTable from './AssetTable';
+import AssetsMap from './AssetsMap';
 
 const OldMeters = () => {
   // Mock data based on Old Meters List image
@@ -20,13 +20,16 @@ const OldMeters = () => {
   ];
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Old Meters List</h1>
+    <div className="p-4 pt-1">
       <AssetTable 
         title="Old Meters List"
         columns={columns}
         data={data}
+        onAdd={() => console.log('Add Old Meter clicked')}
       />
+      <div className="mt-8">
+        <AssetsMap />
+      </div>
     </div>
   );
 };

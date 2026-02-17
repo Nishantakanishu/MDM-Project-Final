@@ -46,6 +46,9 @@ const App = () => {
         {/* Assets Management and submenus */}
         {/* Assets Management and submenus */}
         <Route path="assets" element={<Assets />} />
+        <Route path="assets/zone" element={<Assets />} />
+        <Route path="assets/circle" element={<Assets />} />
+        <Route path="assets/division" element={<Assets />} />
         <Route path="assets/subdivision" element={<Assets />} />
         <Route path="assets/substation" element={<Assets />} />
         <Route path="assets/feeder" element={<Assets />} />

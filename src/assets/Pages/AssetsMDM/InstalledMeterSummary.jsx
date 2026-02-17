@@ -1,6 +1,5 @@
-import React from 'react';
 import AssetTable from './AssetTable';
-import { div } from 'framer-motion/client';
+import AssetsMap from './AssetsMap';
 
 const InstalledMeterSummary = () => {
     // Placeholder Data
@@ -15,15 +14,15 @@ const InstalledMeterSummary = () => {
     ];
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-         <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-800">Installed Meter Summary</h1>
+    <div className="p-4 pt-1 bg-gray-50 min-h-screen">
+       <AssetTable 
+          title="Installed Meter Summary"
+          columns={columns}
+          data={data}
+       />
+        <div className="mt-8">
+          <AssetsMap />
         </div>
-         <AssetTable 
-            title="Installed Meter Summary"
-            columns={columns}
-            data={data}
-         />
     </div>
   );
 };

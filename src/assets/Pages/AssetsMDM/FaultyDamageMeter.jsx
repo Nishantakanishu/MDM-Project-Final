@@ -1,5 +1,5 @@
-import React from 'react';
 import AssetTable from './AssetTable';
+import AssetsMap from './AssetsMap';
 
 const FaultyDamageMeter = () => {
     // Placeholder Data
@@ -14,15 +14,16 @@ const FaultyDamageMeter = () => {
     ];
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-         <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-800">Faulty/Damage Meter List</h1>
+    <div className="p-4 pt-1 bg-gray-50 min-h-screen">
+       <AssetTable 
+          title="Faulty/Damage Meter List"
+          columns={columns}
+          data={data}
+          onAdd={() => console.log('Add Faulty Meter clicked')}
+       />
+        <div className="mt-8">
+          <AssetsMap />
         </div>
-         <AssetTable 
-            title="Faulty/Damage Meters"
-            columns={columns}
-            data={data}
-         />
     </div>
   );
 };

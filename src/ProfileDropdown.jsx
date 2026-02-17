@@ -41,7 +41,7 @@ const ProfileDropdown = () => {
             <span className="font-medium">My Profile</span>
           </button>
           <button className="flex items-center gap-3 px-4 py-3 hover:bg-red-50 text-red-600 w-full text-sm transition-colors group">
-            <MdLogout className="text-lg group-hover:translate-x-1 transition-transform" /> 
+            <MdLogout className="text-lg group-hover:translate-x-1 transition-transform" />
             <span className="font-medium">Logout</span>
           </button>
         </div>
